@@ -6,7 +6,7 @@ export default function Navbar(props) {
     <nav className="navbar navbar-expand-lg bg-body-tertiary">
       <div className="container-fluid">
         <a className="navbar-brand" href="/">
-          
+          TextUtils
         </a>
         <button
           className="navbar-toggler"

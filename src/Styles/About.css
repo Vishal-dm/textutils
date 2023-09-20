@@ -1,0 +1,13 @@
+.dark-mode{
+    background-color: rgb(3, 152, 251) ;
+    color: white;
+    font-weight: 600;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.dark-mode:hover{
+    opacity: 0.85;
+    border-radius: 5px;
+    box-shadow: 2px 2px black;
+}
