@@ -40,14 +40,7 @@ export default function TextForm(props) {
       <div className="container">
         <h1>Enter the Text below:</h1>
         <div className="mb-3">
-          <textarea
-            clayboxsname="form-control"
-            value={text}
-            id="myBOX"
-            cols="100"
-            rows="8"
-            onChange={handleOnChange}
-          ></textarea>
+          <textarea clayboxsname="form-control" value={text} id="myBOX" cols="100" rows="8" onChange={handleOnChange}></textarea>
         </div>
         <button className="btn btn primary mx-1" onClick={handleUpClick}>
           Convert To Uppercase
