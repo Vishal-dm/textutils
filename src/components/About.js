@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import "../Styles/About.css";
+import Navbar from "./Navbar";
+
 
 export default function About() {
   const [myStyle, setMyStyle] = useState({
@@ -9,7 +11,7 @@ export default function About() {
   const [btntext, setBtnText] = useState("Enable Dark Mode")
 
   const toggleStyle = () => {
-    if (myStyle.color == "black") {
+    if (myStyle.color === "black") {
       setMyStyle({
         color: "white",
         backgroundColor: "black",
@@ -27,6 +29,9 @@ export default function About() {
   };
 
   return (
+
+    <>
+    
     <div className="container" style={myStyle}>
       <h2 className="my-3">About Us</h2>
       <div className="accordion" id="accordionExample" style={myStyle}>
@@ -130,5 +135,6 @@ export default function About() {
         </button>
       </div>
     </div>
+    </>
   );
 }

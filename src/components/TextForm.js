@@ -14,7 +14,7 @@ export default function TextForm(props) {
   };
   const handleClearClick = () => {
     // console.log("lowercase was clicked" + text);
-    let newText = '';
+    let newText = "";
     setText(newText);
   };
 
@@ -22,12 +22,23 @@ export default function TextForm(props) {
     // console.log("On Change");
     setText(event.target.value);
   };
+
+  const handleCopy = () => {
+    let text = document.getElementById("myBOX");
+    text.select();
+    navigator.clipboard.writeText(text.value);
+  };
+  const removeExtraSpaces = () => {
+    let newText = text.split(/[ ]+/);
+    setText(newText.join(" "));
+  };
+
   const [text, setText] = useState("");
 
   return (
     <>
       <div className="container">
-        <h1>{props.heading}</h1>
+        <h1>Enter the Text below:</h1>
         <div className="mb-3">
           <textarea
             clayboxsname="form-control"
@@ -46,6 +57,12 @@ export default function TextForm(props) {
         </button>
         <button className="btn btn primary mx-1" onClick={handleClearClick}>
           Clear
+        </button>
+        <button className="btn btn primary mx-1" onClick={handleCopy}>
+          Copy Text
+        </button>
+        <button className="btn btn primary mx-1" onClick={removeExtraSpaces}>
+          Remove Extra Spaces
         </button>
       </div>
       <div className="container my-3">
