@@ -6,16 +6,19 @@ export default function TextForm(props) {
     // console.log("Uppercase was clicked" + text);
     let newText = text.toUpperCase();
     setText(newText);
+    props.showAlert("Converted to Uppercase!","success");
   };
   const handlelowClick = () => {
     // console.log("lowercase was clicked" + text);
     let newText = text.toLowerCase();
     setText(newText);
+    props.showAlert("Converted to Lowercase!","success");
   };
   const handleClearClick = () => {
     // console.log("lowercase was clicked" + text);
     let newText = "";
     setText(newText);
+    props.showAlert("Text Removed!", "success")
   };
 
   const handleOnChange = (event) => {
@@ -27,10 +30,12 @@ export default function TextForm(props) {
     let text = document.getElementById("myBOX");
     text.select();
     navigator.clipboard.writeText(text.value);
+    props.showAlert("Text Copied!", "success")
   };
   const removeExtraSpaces = () => {
     let newText = text.split(/[ ]+/);
     setText(newText.join(" "));
+    props.showAlert("Extra spaces removed!", "success")
   };
 
   const [text, setText] = useState("");
@@ -38,7 +43,7 @@ export default function TextForm(props) {
   return (
     <>
       <div className="container">
-        <h1>Enter the Text below:</h1>
+        <h1>{props.heading}</h1>
         <div className="mb-3">
           <textarea clayboxsname="form-control" value={text} id="myBOX" cols="100" rows="8" onChange={handleOnChange}></textarea>
         </div>
